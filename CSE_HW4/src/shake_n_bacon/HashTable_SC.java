@@ -3,10 +3,10 @@ package shake_n_bacon;
 import providedCode.*;
 
 /**
- * @author <name>
- * @UWNetID <uw net id>
- * @studentID <id number>
- * @email <email address>
+ * @author Zerina Kapetnaovic, Brandon Johanson
+ * @UWNetID zerinak, 
+ * @studentID 1350326,
+ * @email zerinak@uw.edu
  * 
  *        TODO: Replace this comment with your own as appropriate.
  * 
@@ -34,20 +34,47 @@ import providedCode.*;
  *        TODO: Develop appropriate tests for your HashTable.
  */
 public class HashTable_SC extends DataCounter {
-
+	
+	private Hasher hasher;
+	private Comparator compare;
+	private int size;
+	
+	public static class Node
+	{
+		public Node next;
+		public Object key;
+		public Object value;
+		
+		
+		public Node(Node next, Object key, Object value)
+		{
+			this.next = next;
+			this.key = key;
+			this.value = value;
+		}
+	}
+	
+	
 	public HashTable_SC(Comparator<String> c, Hasher h) {
 		// TODO: To-be implemented
+		this.compare = c;
+		this.hasher = h;
+		//create an array?
+		size = 0;
+		
 	}
 
 	@Override
-	public void incCount(String data) {
-		// TODO Auto-generated method stub
+	public void incCount(String data) 
+	{
+		//double loadFactor = size/array.length;
+		
 	}
 
 	@Override
 	public int getSize() {
 		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 
 	@Override
