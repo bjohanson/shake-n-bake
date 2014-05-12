@@ -3,19 +3,26 @@ package shake_n_bacon;
 import providedCode.Hasher;
 
 /**
- * @author <name>
- * @UWNetID <uw net id>
- * @studentID <id number>
- * @email <email address>
+ * @author Zerina Kapetanovic, Brandon Johanson
+ * @UWNetID zerinak,	
+ * @studentID 1350326, 
+ * @email zerinak@uw.edu
  */
 public class StringHasher implements Hasher {
 
 	/**
-	 * TODO Replace this comment with your own as appropriate.
+	 * Take the string and return an integer to be used in the hash function
+	 * @param str
+	 * @return sum
 	 */
-	@Override
 	public int hash(String str) {
-		// TODO Auto-generated method stub
-		return 0;
+		int sum = 0;
+		
+		for(int i = 0; i < str.length(); i++)
+		{
+			sum += str.charAt(i);
+			sum *= 11;
+		}
+		return sum;
 	}
 }
