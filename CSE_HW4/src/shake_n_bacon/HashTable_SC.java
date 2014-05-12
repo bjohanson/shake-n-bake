@@ -33,12 +33,10 @@ import providedCode.*;
  * 
  *        TODO: Develop appropriate tests for your HashTable.
  */
-public class HashTable_SC extends DataCounter {
-	
-	private Hasher hasher;
-	private Comparator compare;
-	private int size;
-	
+
+
+public class HashTable_SC extends DataCounter 
+{	
 	public static class Node
 	{
 		public Node next;
@@ -52,14 +50,31 @@ public class HashTable_SC extends DataCounter {
 			this.key = key;
 			this.value = value;
 		}
+		
+		public Object getValue()
+		{
+			return value;
+		}
+		
+		public Object getKey()
+		{
+			return key;
+		}
+		
+		
 	}
 	
+	private Hasher hasher;
+	private Comparator compare;
+	private int size;
+	private Node[] data;
+	private int dataSize = 100;
 	
-	public HashTable_SC(Comparator<String> c, Hasher h) {
-		// TODO: To-be implemented
+	public HashTable_SC(Comparator<String> c, Hasher h) 
+	{
 		this.compare = c;
 		this.hasher = h;
-		//create an array?
+		data = new Node[dataSize];
 		size = 0;
 		
 	}
@@ -67,24 +82,26 @@ public class HashTable_SC extends DataCounter {
 	@Override
 	public void incCount(String data) 
 	{
-		//double loadFactor = size/array.length;
+		//double loadFactor = size/data.length;
 		
 	}
 
 	@Override
-	public int getSize() {
-		// TODO Auto-generated method stub
+	public int getSize() 
+	{
 		return size;
 	}
 
 	@Override
-	public int getCount(String data) {
+	public int getCount(String data) 
+	{
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public SimpleIterator getIterator() {
+	public SimpleIterator getIterator() 
+	{
 		return null;
 	}
 
