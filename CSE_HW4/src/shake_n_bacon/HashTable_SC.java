@@ -46,7 +46,7 @@ public class HashTable_SC extends DataCounter
 		
 		public Node(Node next, Object key, Object value)
 		{
-			this.next = next;
+			this.next = null;
 			this.key = key;
 			this.value = value;
 		}
@@ -61,6 +61,20 @@ public class HashTable_SC extends DataCounter
 			return key;
 		}
 		
+		public Node getNext()
+		{
+			return next;
+		}
+		
+		public void setNext(Node next)
+		{
+			this.next = next;
+		}
+		
+		public void setValue(Object value)
+		{
+			this.value = value;
+		}
 		
 	}
 	
@@ -79,27 +93,39 @@ public class HashTable_SC extends DataCounter
 		
 	}
 
-	@Override
+	/**
+	 * Increment the count for a particular data element.
+	 * @param data
+	 *            data element whose count to increment.
+	 */
 	public void incCount(String data) 
 	{
 		//double loadFactor = size/data.length;
 		
 	}
 
-	@Override
+	/**
+	 * The number of unique data elements in the structure.
+	 * @return the number of unique data elements in the structure.
+	 */
 	public int getSize() 
 	{
 		return size;
 	}
 
-	@Override
+	/**
+	 * The current count for the data, 0 if it is not in the counter.
+	 */
 	public int getCount(String data) 
 	{
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
+	/**
+	 * Clients must not increment counts between an iterator's creation and its
+	 * final use. Data structures need not check this.
+	 * @return an iterator for the elements.
+	 */
 	public SimpleIterator getIterator() 
 	{
 		return null;
